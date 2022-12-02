@@ -234,7 +234,7 @@ packages:
     source: path
     version: "0.0.1"
   gea_communications:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../mobile.service.smarthq/smarthqservice/packages/gea_communications"
       relative: true

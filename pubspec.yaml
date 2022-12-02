@@ -35,6 +35,8 @@ dependencies:
   get: ^4.6.5
   flutter_midi:
     path: ../flutter_midi
+  gea_communications:
+    path: ../mobile.service.smarthq/smarthqservice/packages/gea_communications
   gea_datasource:
     path: ../mobile.service.smarthq/smarthqservice/packages/gea_datasource
   cupertino_icons: ^1.0.2
