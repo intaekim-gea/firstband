@@ -1,8 +1,10 @@
 import 'package:firstband/ui/music_page.dart';
+import 'package:firstband/ui/track/track_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'ui/main_page.dart';
+import 'ui/track_page.dart';
 
 final RouteObserver<ModalRoute<void>> routeObserver =
     RouteObserver<ModalRoute<void>>();
@@ -39,6 +41,14 @@ class MyApp extends GetMaterialApp {
               },
             ),
           ),
+          GetPage(
+              name: TrackPage.name,
+              page: () => const TrackPage(),
+              binding: BindingsBuilder(
+                () {
+                  Get.put(TrackPageController());
+                },
+              ))
         ],
       );
 }

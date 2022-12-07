@@ -1,7 +1,11 @@
+import 'package:firstband/entities/instrument.dart';
+import 'package:firstband/ui/model_controller.dart';
 import 'package:firstband/ui/music_page.dart';
+import 'package:firstband/ui/track/track_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../entities/project.dart';
 import 'communications/communication_controller.dart';
 import 'piano/piano_controller.dart';
 import 'piano/piano_widget.dart';
@@ -19,35 +23,52 @@ class MainPage extends StatelessWidget {
     Get.put(CommunicationController(kLeft), tag: kLeft);
     Get.put(CommunicationController(_kRight), tag: _kRight);
     Get.put(PianoController(kLeft));
+
+    Get.find<ModelController>().project.value = Project(
+      name: 'Project1',
+      instruments: [],
+    );
+    Get.put(TrackContainerController());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          Obx(
-            () => IconButton(
-              onPressed: () {
-                left.tryToConnect();
-                right.tryToConnect();
-              },
-              color: left.isConnected.value && right.isConnected.value
-                  ? Colors.greenAccent
-                  : Colors.redAccent,
-              icon: const Icon(Icons.refresh_rounded),
+        appBar: AppBar(
+          actions: [
+            TextButton(
+              onPressed: () => Get.find<TrackContainerController>().play(),
+              child: const Text(
+                'Play',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-          TextButton(
-            onPressed: () => Get.toNamed(MusicPage.name),
-            child: const Text(
-              'Music',
-              style: TextStyle(color: Colors.white),
+            Obx(
+              () => IconButton(
+                onPressed: () {
+                  left.tryToConnect();
+                  right.tryToConnect();
+                },
+                color: left.isConnected.value && right.isConnected.value
+                    ? Colors.greenAccent
+                    : Colors.redAccent,
+                icon: const Icon(Icons.refresh_rounded),
+              ),
             ),
-          ),
-        ],
-      ),
-      body: const PianoWidget(),
-    );
+            TextButton(
+              onPressed: () => Get.toNamed(MusicPage.name),
+              child: const Text(
+                'Music',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+        body: Column(
+          children: const [
+            TrackContainer(),
+            SizedBox(height: 250, child: PianoWidget()),
+          ],
+        ));
   }
 }

@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:firstband/my_app.dart';
+import 'package:firstband/ui/model_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 Future<void> locate() async {
-  // final datasource = GeaDatasource();
-  // final datasource = MockCommunicationAdapter();
-  // await datasource.initialize();
-  // Get.put<CommunicationAdapter>(datasource);
+  Get.put(ModelController(), permanent: true);
 }
 
 void main() async {
