@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:gea_comms_ios/gea_comms_ios.dart';
 import 'package:gea_communications/gea_communications.dart';
 import 'package:gea_datasource/gea_datasource.dart';
 import 'package:get/get.dart';
@@ -31,9 +32,10 @@ class Received extends Packet {
 class CommunicationController extends GetxController {
   final String _tag;
 
-  final CommunicationAdapter _dataSource = GeaDatasource();
+  final CommunicationAdapter dataSource = GeaDatasource();
 
   Peripheral? _peripheral;
+  final isConnected = false.obs;
   final _subscriptions = <StreamSubscription>[];
 
   final formKey = GlobalKey<FormState>();
@@ -46,43 +48,61 @@ class CommunicationController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _dataSource.initialize().then(
-      (value) {
-        _subscriptions.add(
-          _dataSource.deviceList().listen(
-            (list) async {
-              _peripheral = await _dataSource.connect(list.first);
-              if (_peripheral == null) {
-                throw UnsupportedError('Failed To Connect: ${list.first}');
-              }
-
-              _subscriptions.add(
-                _peripheral!.listen(
-                  (GeaEvent e) {
-                    if (e is GeaDataEvent) {
-                      debugPrint('GeaDataEvent: ${e.data}');
-                      final bytes = Uint8StringList.fromBytes(e.data);
-                      if (e is GeaDataEventSent) {
-                        debugPrint('sent: $bytes');
-                        packetLog.add(Sent('$bytes'));
-                      } else {
-                        debugPrint('received: $bytes');
-                        packetLog.add(Received('$bytes'));
-                      }
-                    } else if (e is GeaEventDisconnected) {
-                      debugPrint('disconnected');
-                    }
-                  },
-                ),
-              );
-            },
-          ),
-        );
-      },
-    );
-    _dataSource.scan();
-
+    dataSource.initialize().then((_) => tryToConnect());
     textEditingController.text = 'ff01e401';
+  }
+
+  void tryToConnect() {
+    _peripheral?.close();
+    for (var subscription in _subscriptions) {
+      subscription.cancel();
+    }
+    _subscriptions.clear();
+
+    _subscriptions.add(
+      dataSource.deviceList().listen(
+        (list) async {
+          final peripheral = list.firstOrNullWhere((element) {
+            if (element is BtClassicPeripheral) {
+              return element.acc.macAddress == _tag;
+            }
+            return false;
+          });
+          if (peripheral == null) return;
+          if (_peripheral != null) return; // Already Connected
+
+          _peripheral = await dataSource.connect(peripheral);
+          if (_peripheral == null) {
+            throw UnsupportedError('Failed To Connect: ${list.first}');
+          }
+
+          debugPrint('Connected: $_tag');
+          isConnected.value = true;
+          _subscriptions.add(
+            _peripheral!.listen(
+              (GeaEvent e) {
+                if (e is GeaDataEvent) {
+                  // debugPrint('GeaDataEvent: ${e.data}');
+                  final bytes = Uint8StringList.fromBytes(e.data);
+                  if (e is GeaDataEventSent) {
+                    debugPrint('sent: $bytes');
+                    packetLog.add(Sent('$bytes'));
+                  } else {
+                    debugPrint('received: $bytes');
+                    packetLog.add(Received('$bytes'));
+                  }
+                } else if (e is GeaEventDisconnected) {
+                  debugPrint('disconnected');
+                  _peripheral = null;
+                  isConnected.value = false;
+                }
+              },
+            ),
+          );
+        },
+      ),
+    );
+    dataSource.scan();
   }
 
   @override
@@ -119,5 +139,42 @@ class CommunicationController extends GetxController {
   void disconnect() {
     _peripheral?.close();
     Get.back();
+  }
+
+  static int id = 0;
+  void playNote(int midi) {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString(
+          '${(id++).hex1byteString}f40002${midi.hex2byteString}'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
+  void playDrainPump() {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString(
+          '${(id++).hex1byteString}f402 04 1200 1200'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
+  void stopDrainPump() {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString(
+          '${(id++).hex1byteString} f402 04 0000 0000'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
   }
 }

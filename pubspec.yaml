@@ -35,11 +35,16 @@ dependencies:
   get: ^4.6.5
   flutter_midi:
     path: ../flutter_midi
+  shqs_util:
+    path: ../mobile.service.smarthq/smarthqservice/packages/shqs_util
   gea_communications:
     path: ../mobile.service.smarthq/smarthqservice/packages/gea_communications
   gea_datasource:
     path: ../mobile.service.smarthq/smarthqservice/packages/gea_datasource
+  gea_comms_ios:
+    path: ../mobile.service.smarthq/smarthqservice/packages/gea_datasource/packages/gea_comms_ios
   cupertino_icons: ^1.0.2
+  rounded_loading_button: ^2.1.0
 
 dependency_overrides:
   freezed_annotation: ^2.2.0

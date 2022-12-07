@@ -1,10 +1,20 @@
+import 'package:firstband/ui/communications/communication_controller.dart';
+import 'package:firstband/ui/communications/notes.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 import 'package:get/get.dart';
+import 'package:shqs_util/shqs_util.dart';
 
 class PianoController extends GetxController {
+  final String _beanControllerTag;
   final _flutterMidi = FlutterMidi();
+
+  CommunicationController get beanController => Get.find(
+        tag: _beanControllerTag,
+      );
+
+  PianoController(this._beanControllerTag);
 
   @override
   void onInit() {
@@ -25,7 +35,17 @@ class PianoController extends GetxController {
     }
   }
 
+  static const begin = 72; // 72(C5), 0x17(23)
+  final notes = {
+    72: BeanNote.Octave5Do, // C5 -> 0x17(23)
+    73: BeanNote.Octave5DoSharp, // C#5
+    74: BeanNote.Octave5Re, // D5
+    75: BeanNote.Octave5ReSharp, // D#5
+  };
   void playNote(int midi) {
+    final newMidi = midi + (0x17 - 72);
+    debugPrint('midi: $midi, newMidi: $newMidi(0x${newMidi.hex2byteString})');
+    beanController.playNote(newMidi);
     _flutterMidi.playMidiNote(midi: midi);
   }
 }

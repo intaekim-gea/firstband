@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_midi/flutter_midi.dart';
 import 'package:get/get.dart';
 import 'package:piano/piano.dart';
 
@@ -13,7 +11,7 @@ class PianoWidget extends GetView<PianoController> {
   Widget build(BuildContext context) {
     return Center(
       child: InteractivePiano(
-        highlightedNotes: [NotePosition(note: Note.C, octave: 3)],
+        highlightedNotes: [NotePosition(note: Note.C, octave: 5)],
         naturalColor: Colors.white,
         accidentalColor: Colors.black,
         keyWidth: 60,

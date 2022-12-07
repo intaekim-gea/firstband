@@ -206,7 +206,7 @@ packages:
     source: path
     version: "0.0.1"
   gea_comms_ios:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../mobile.service.smarthq/smarthqservice/packages/gea_datasource/packages/gea_comms_ios"
       relative: true
@@ -422,6 +422,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.2"
+  rounded_loading_button:
+    dependency: "direct main"
+    description:
+      name: rounded_loading_button
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
   rxdart:
     dependency: transitive
     description:
@@ -486,7 +493,7 @@ packages:
     source: hosted
     version: "2.1.1"
   shqs_util:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../mobile.service.smarthq/smarthqservice/packages/shqs_util"
       relative: true

@@ -1,3 +1,4 @@
+import 'package:firstband/ui/music_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends GetMaterialApp {
           routeObserver,
         ],
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.indigo,
         ),
         initialRoute: MainPage.name,
         getPages: [
@@ -27,6 +28,15 @@ class MyApp extends GetMaterialApp {
             page: () => MainPage(),
             binding: BindingsBuilder(
               () {},
+            ),
+          ),
+          GetPage(
+            name: MusicPage.name,
+            page: () => const MusicPage(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(MusicController(kLeft));
+              },
             ),
           ),
         ],
