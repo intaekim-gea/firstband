@@ -1,5 +1,6 @@
 import 'package:firstband/ui/communications/communication_controller.dart';
 import 'package:firstband/ui/communications/notes.dart';
+import 'package:firstband/ui/main_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
@@ -42,10 +43,19 @@ class PianoController extends GetxController {
     74: BeanNote.Octave5Re, // D5
     75: BeanNote.Octave5ReSharp, // D#5
   };
-  void playNote(int midi) {
-    final newMidi = midi + (0x17 - 72);
-    debugPrint('midi: $midi, newMidi: $newMidi(0x${newMidi.hex2byteString})');
-    beanController.playNote(newMidi);
+  void playNote(int midi, {required bool withBean}) {
+    if (withBean) {
+      final newMidi = midi + (0x17 - 72);
+      if (_beanControllerTag == kLeft)
+        GeLog.e('MIDI',
+            'midi: $midi, newMidi: $newMidi(0x${newMidi.hex2byteString})');
+      else {
+        GeLog.i('MIDI',
+            'midi: $midi, newMidi: $newMidi(0x${newMidi.hex2byteString})');
+      }
+      beanController.playNote(newMidi);
+    }
+
     _flutterMidi.playMidiNote(midi: midi);
   }
 }

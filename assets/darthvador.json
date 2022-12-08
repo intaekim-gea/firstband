@@ -1,0 +1,879 @@
+{
+    "name": "DarthVador",
+    "appliances": [
+        {
+            "name": "Washer1",
+            "beanMac": "D8:28:C9:13:BA:E5",
+            "instruments": [
+                {
+                    "kind": "Buzz",
+                    "bits": [
+                        {
+                            "msec": "500",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "1400",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "1700",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "2000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "2600",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "2900",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "3200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "3800",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "4100",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "4400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "4700",
+                            "value": "Octave3ReSharp"
+                        },
+                        {
+                            "msec": "5000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "5300",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "5600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "6200",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "6500",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "6800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "7400",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "7700",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "8000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "8600",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "8900",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "9200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "9500",
+                            "value": "Octave3ReSharp"
+                        },
+                        {
+                            "msec": "9800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "10100",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "10400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "11000",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "11300",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "11600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "12200",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "12500",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "12800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "13400",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "13700",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "14000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "14300",
+                            "value": "Octave3ReSharp"
+                        },
+                        {
+                            "msec": "14600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "14900",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "15200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "15800",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "16100",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "16400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "17000",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "17300",
+                            "value": "Octave3ReSharp"
+                        },
+                        {
+                            "msec": "17600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "18200",
+                            "value": "Octave3ReSharp"
+                        },
+                        {
+                            "msec": "18500",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "18800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "19100",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "19400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "19700",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "20000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "20600",
+                            "value": "Octave3Sol"
+                        },
+                        {
+                            "msec": "20900",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "21200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "21500",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "21800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "22100",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "22400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23000",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "23300",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "23600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23900",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "24200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "24500",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "24800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "25400",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "25700",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "26000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "26300",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "26600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "26900",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "27200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "28100",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "28400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "28700",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "29000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "29300",
+                            "value": "Octave3La"
+                        },
+                        {
+                            "msec": "29600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "29900",
+                            "value": "Octave3La"
+                        },
+                        {
+                            "msec": "30200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "30350",
+                            "value": "Octave3La"
+                        },
+                        {
+                            "msec": "30500",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "30800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "31100",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "31400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "31700",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "32000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "32600",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "32900",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "33200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "33500",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "33800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "34100",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "34400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "35000",
+                            "value": "Octave3Re"
+                        },
+                        {
+                            "msec": "35300",
+                            "value": "Octave3DoSharp"
+                        },
+                        {
+                            "msec": "35600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "35900",
+                            "value": "Octave3Fa"
+                        },
+                        {
+                            "msec": "36200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "36500",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "36800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "37100",
+                            "value": "Octave3La"
+                        },
+                        {
+                            "msec": "37400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "37550",
+                            "value": "Octave3La"
+                        },
+                        {
+                            "msec": "37700",
+                            "value": "Octave3FaSharp"
+                        },
+                        {
+                            "msec": "38000",
+                            "value": "Mute"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Washer2",
+            "beanMac": "D8:28:C9:34:2E:16",
+            "instruments": [
+                {
+                    "kind": "Buzz",
+                    "bits": [
+                        {
+                            "msec": "500",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "1100",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "1400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "1700",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "2000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "2300",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "2600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "2750",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "2900",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "3200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "3500",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "3800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "3950",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "4100",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "4400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "5300",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "5600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "5900",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "6200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "6500",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "6800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "7100",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "7400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "7550",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "7700",
+                            "value": "Octave4SolSharp"
+                        },
+                        {
+                            "msec": "8000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "8300",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "8600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "8750",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "8900",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "9200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "10100",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "10400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "10700",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "11000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "11150",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "11300",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "11600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "11900",
+                            "value": "Octave5SolSharp"
+                        },
+                        {
+                            "msec": "12200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "12350",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "12500",
+                            "value": "Octave5PaSharp"
+                        },
+                        {
+                            "msec": "12650",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "12800",
+                            "value": "Octave5PaSharp"
+                        },
+                        {
+                            "msec": "13100",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "13400",
+                            "value": "Octave4LaSharp"
+                        },
+                        {
+                            "msec": "13700",
+                            "value": "Octave5ReSharp"
+                        },
+                        {
+                            "msec": "14000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "14300",
+                            "value": "Octave5Re"
+                        },
+                        {
+                            "msec": "14600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "14750",
+                            "value": "Octave5DoSharp"
+                        },
+                        {
+                            "msec": "14900",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "15050",
+                            "value": "Octave4Ci"
+                        },
+                        {
+                            "msec": "15200",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "15500",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "15800",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "16100",
+                            "value": "Octave4SolSharp"
+                        },
+                        {
+                            "msec": "16400",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "16700",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "17000",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "17300",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "17600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "17900",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "18200",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "18500",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "18800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "19700",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "20000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "20300",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "20600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "20750",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "20900",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "21200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "21500",
+                            "value": "Octave5SolSharp"
+                        },
+                        {
+                            "msec": "21800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "21950",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "22100",
+                            "value": "Octave5PaSharp"
+                        },
+                        {
+                            "msec": "22250",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "22400",
+                            "value": "Octave5PaSharp"
+                        },
+                        {
+                            "msec": "22700",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23000",
+                            "value": "Octave4LaSharp"
+                        },
+                        {
+                            "msec": "23300",
+                            "value": "Octave5ReSharp"
+                        },
+                        {
+                            "msec": "23600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23900",
+                            "value": "Octave5Re"
+                        },
+                        {
+                            "msec": "24200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "24350",
+                            "value": "Octave5DoSharp"
+                        },
+                        {
+                            "msec": "24500",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "24650",
+                            "value": "Octave4Ci"
+                        },
+                        {
+                            "msec": "24800",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "25100",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "25400",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "25700",
+                            "value": "Octave4SolSharp"
+                        },
+                        {
+                            "msec": "26000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "26300",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "26600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "26750",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "26900",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "27200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "27500",
+                            "value": "Octave4Pa"
+                        },
+                        {
+                            "msec": "27800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "27950",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "28100",
+                            "value": "Octave4La"
+                        },
+                        {
+                            "msec": "28400",
+                            "value": "Mute"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

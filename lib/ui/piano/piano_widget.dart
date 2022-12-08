@@ -5,7 +5,11 @@ import 'package:piano/piano.dart';
 import 'piano_controller.dart';
 
 class PianoWidget extends GetView<PianoController> {
-  const PianoWidget({super.key});
+  final String _tag;
+  @override
+  String get tag => _tag;
+
+  const PianoWidget({required String beanTag, super.key}) : _tag = beanTag;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class PianoWidget extends GetView<PianoController> {
         ], extended: true),
         onNotePositionTapped: (position) {
           final pitch = position.pitch;
-          controller.playNote(pitch);
+          controller.playNote(pitch, withBean: true);
         },
       ),
     );

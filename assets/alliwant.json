@@ -1,0 +1,344 @@
+{
+    "name": "All I Want For Christmas is You",
+    "appliances": [
+        {
+            "name": "Washer1",
+            "beanMac": "D8:28:C9:34:2E:16",
+            "instruments": [
+                {
+                    "kind": "Buzz",
+                    "bits": [
+                        {
+                            "msec": "500",
+                            "value": "Octave5Do"
+                        },
+                        {
+                            "msec": "800",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "1100",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "1400",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "1550",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "1700",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "2000",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "2300",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "2600",
+                            "value": "Octave5Mi"
+                        },
+                        {
+                            "msec": "2750",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "2900",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "3200",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "3350",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "3500",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "3800",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "4100",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "4400",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "4700",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "5000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "5300",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "5600",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "5900",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "6200",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "6350",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "6500",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "6800",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "7100",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "7400",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "7550",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "7700",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "8000",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "8300",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "8600",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "8900",
+                            "value": "Octave6ReSharp"
+                        },
+                        {
+                            "msec": "9200",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "9500",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "9800",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "10100",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "10400",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "10700",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "11000",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "11300",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "11600",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "11900",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "12200",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "12500",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "12800",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "12950",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "13100",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "13400",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "13700",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "14000",
+                            "value": "Octave5Ci"
+                        },
+                        {
+                            "msec": "14300",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "14600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "14900",
+                            "value": "Octave5Pa"
+                        },
+                        {
+                            "msec": "15200",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "15500",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "15800",
+                            "value": "Octave6Sol"
+                        },
+                        {
+                            "msec": "16400",
+                            "value": "Octave6Pa"
+                        },
+                        {
+                            "msec": "17000",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "17300",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "17600",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "17900",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "18200",
+                            "value": "Octave5La"
+                        },
+                        {
+                            "msec": "18500",
+                            "value": "Octave5Sol"
+                        },
+                        {
+                            "msec": "18800",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "19100",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "19400",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "19700",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "20300",
+                            "value": "Octave6Do"
+                        },
+                        {
+                            "msec": "20900",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "21500",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "22100",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "22700",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "22850",
+                            "value": "Octave6Sol"
+                        },
+                        {
+                            "msec": "23000",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "23150",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23300",
+                            "value": "Octave6Mi"
+                        },
+                        {
+                            "msec": "23600",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "23750",
+                            "value": "Octave6Re"
+                        },
+                        {
+                            "msec": "24050",
+                            "value": "Mute"
+                        },
+                        {
+                            "msec": "24200",
+                            "value": "Octave6Mi"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -7,16 +7,16 @@ import 'package:get/get.dart';
 import '../../entities/appliance.dart';
 import '../../entities/instrument.dart';
 import '../model_controller.dart';
-import 'track_painter.dart';
+import '../track/track_painter.dart';
 
-class TrackController extends GetxController {
+class ApplianceTrackController extends GetxController {
   final appliance = Appliance(name: '', instruments: [], beanMac: kRight).obs;
   final instrument = Instrument(kind: KindOfInstrument.none, bits: []).obs;
   final ScrollController scrollController;
 
   final trackSize = Size(Get.find<ModelController>().trackWidth, 120).obs;
 
-  TrackController({
+  ApplianceTrackController({
     required Instrument aInstrument,
     required this.scrollController,
   }) {
@@ -24,13 +24,13 @@ class TrackController extends GetxController {
   }
 }
 
-class Track extends GetView<TrackController> {
+class ApplianceTrack extends GetView<ApplianceTrackController> {
   final int index;
   final String _tag;
   @override
   String get tag => _tag;
 
-  Track({
+  ApplianceTrack({
     required Appliance appliance,
     required Instrument instrument,
     required ScrollController scrollController,
@@ -38,7 +38,7 @@ class Track extends GetView<TrackController> {
     super.key,
   }) : _tag = '${instrument.kind.value}$index' {
     Get.put(
-        TrackController(
+        ApplianceTrackController(
           aInstrument: instrument,
           scrollController: scrollController,
         ),

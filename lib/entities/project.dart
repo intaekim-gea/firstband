@@ -1,24 +1,22 @@
-import 'instrument.dart';
+import 'appliance.dart';
 
 class Project {
-  static const maxTrackCount = 3;
-
   final String name;
-  final List<Instrument> instruments;
+  final List<Appliance> appliances;
 
-  Project({required this.name, required this.instruments});
+  Project({required this.name, required this.appliances});
 
   factory Project.fromJson(Map<String, dynamic> json) {
     return Project(
       name: json['name'] ?? '',
-      instruments: List<Map<String, dynamic>>.from(json['instruments'] ?? [])
-          .map((x) => Instrument.fromJson(x))
+      appliances: List<Map<String, dynamic>>.from(json['appliances'] ?? [])
+          .map((x) => Appliance.fromJson(x))
           .toList(),
     );
   }
 
   Map<String, dynamic> toJson() => {
         'name': name,
-        'instruments': instruments.map((e) => e.toJson()).toList(),
+        'appliances': appliances.map((e) => e.toJson()).toList(),
       };
 }

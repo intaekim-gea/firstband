@@ -141,8 +141,23 @@ class CommunicationController extends GetxController {
     Get.back();
   }
 
+  void playMusic(String erd) {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString('${(id++).hex1byteString}${erd}0101'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
   static int id = 0;
   void playNote(int midi) {
+    if (midi < 0) {
+      return;
+    }
+
     final packet = RawPacket(
       destination: 'c0',
       source: BeanConfiguration.applictionAddress,

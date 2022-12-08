@@ -7,30 +7,42 @@ import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 
 import '../../entities/instrument.dart';
 import '../model_controller.dart';
-import 'track.dart';
+import 'appliance_track.dart';
 
-class TrackContainerController extends GetxController {
-  final Appliance appliance;
+class ApplianceTracksController extends GetxController {
+  final List<Appliance> appliances;
   final scrollControllers = LinkedScrollControllerGroup();
 
-  TrackContainerController(this.appliance);
+  ApplianceTracksController(this.appliances);
 
-  final tracks = <Track>[].obs;
+  final tracks = <ApplianceTrack>[].obs;
 
   @override
   void onInit() {
-    for (var instrument in appliance.instruments) {
-      addTrack(instrument: instrument);
-    }
+    final modelController = Get.find<ModelController>();
+    modelController.project.listen((project) {
+      appliances.clear();
+      appliances.addAll(project.appliances);
+
+      for (var appliance in appliances) {
+        for (var instrument in appliance.instruments) {
+          addTrack(appliance: appliance, instrument: instrument);
+        }
+      }
+    });
+
     super.onInit();
   }
 
-  void addTrack({required Instrument instrument}) {
+  void addTrack({
+    required Appliance appliance,
+    required Instrument instrument,
+  }) {
     final index = tracks.lastIndexWhere((element) =>
             element.controller.instrument.value.kind == instrument.kind) +
         1;
     final scrollController = scrollControllers.addAndGet();
-    final track = Track(
+    final track = ApplianceTrack(
       appliance: appliance,
       instrument: instrument,
       scrollController: scrollController,
@@ -48,8 +60,10 @@ class TrackContainerController extends GetxController {
     };
     final kind = kinds[tracks.length]!;
     final instrument = Instrument(kind: kind, bits: []);
-    if (Get.find<ModelController>().addInstrument(appliance, instrument)) {
-      addTrack(instrument: instrument);
+    for (var appliance in appliances) {
+      if (Get.find<ModelController>().addInstrument(appliance, instrument)) {
+        addTrack(appliance: appliance, instrument: instrument);
+      }
     }
   }
 
@@ -76,14 +90,9 @@ class TrackContainerController extends GetxController {
   }
 }
 
-class TrackContainer extends GetView<TrackContainerController> {
-  final String _tag;
-  @override
-  String get tag => _tag;
-
-  TrackContainer({required Appliance appliance, super.key})
-      : _tag = appliance.name {
-    Get.put(TrackContainerController(appliance), tag: _tag);
+class ApplianceTrackContainer extends GetView<ApplianceTracksController> {
+  ApplianceTrackContainer({required List<Appliance> appliances, super.key}) {
+    Get.put(ApplianceTracksController(appliances));
   }
 
   @override
