@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:firstband/entities/appliance.dart';
@@ -16,11 +17,12 @@ class ApplianceTracksController extends GetxController {
   ApplianceTracksController(this.appliances);
 
   final tracks = <ApplianceTrack>[].obs;
+  StreamSubscription? _subscription;
 
   @override
   void onInit() {
     final modelController = Get.find<ModelController>();
-    modelController.project.listen((project) {
+    _subscription = modelController.project.listen((project) {
       appliances.clear();
       appliances.addAll(project.appliances);
 
@@ -32,6 +34,12 @@ class ApplianceTracksController extends GetxController {
     });
 
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    _subscription?.cancel();
+    super.onClose();
   }
 
   void addTrack({
@@ -97,23 +105,33 @@ class ApplianceTrackContainer extends GetView<ApplianceTracksController> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Obx(
-        () => Stack(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ...controller.tracks,
-                if (controller.tracks.length < Appliance.maxTrackCount)
-                  IconButton(
+    return Obx(
+      () => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          ...controller.tracks,
+          if (controller.tracks.length < Appliance.maxTrackCount)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Container(
+                color: const Color.fromARGB(0xff, 0x1f, 0x1f, 0x1f),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 70,
+                  child: TextButton(
                     onPressed: controller.addNewTrack,
-                    icon: const Icon(Icons.add_box),
-                  )
-              ],
+                    child: const Text(
+                      '+ ADD A NEW APPLIANCE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ],
-        ),
+        ],
       ),
     );
   }

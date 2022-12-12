@@ -13,8 +13,10 @@ import 'appliance/appliance_tracks.dart';
 class ModelController extends GetxController {
   final project = Project(name: '', appliances: []).obs;
 
-  static const intervalPerSec = 400.0;
-  var trackWidth = 15000.0;
+  // static const intervalPerSec = 400.0;
+  // var trackWidth = 15000.0;
+  static const intervalPerSec = 200.0;
+  var trackWidth = 7500.0;
   List<Timer> playTimers = [];
 
   double get totalPlayTimeInMilliSec => (trackWidth / intervalPerSec) * 1000;
@@ -34,9 +36,9 @@ class ModelController extends GetxController {
       project.value = aProject;
     }
 
-    project.listen((project) {
-      // 1:400 = project.totalMilliSec / 1000.0 : x;
-    });
+    // project.listen((project) {
+    // 1:400 = project.totalMilliSec / 1000.0 : x;
+    // });
   }
 
   void setProject(Project project) {
@@ -44,18 +46,20 @@ class ModelController extends GetxController {
   }
 
   bool addInstrument(Appliance appliance, Instrument instrument) {
-    if (appliance.instruments.length >= Appliance.maxTrackCount) return false;
+    if (appliance.instruments.length >= Appliance.maxTrackCount) {
+      return false;
+    }
     return true;
   }
 
-  void _playAppliance(Appliance appliance) {
+  void _playAppliance(Appliance appliance, {bool isStop = false}) {
     final tag = appliance.name == 'Washer1' ? kLeft : kRight;
     final music = {
-      'DarthVador': {
+      'Imperial March': {
         kLeft: 'f403',
         kRight: 'f404',
       },
-      'DanceMonkey': {
+      'Dance Monkey': {
         kLeft: 'f405',
         kRight: 'f406',
       },
@@ -70,9 +74,22 @@ class ModelController extends GetxController {
     final erd = music[model.project.value.name]?[tag];
     assert(erd != null);
     if (erd != null) {
-      comm.playMusic(erd);
-      if ('All I Want For Christmas is You' == model.project.value.name) {
-        comm.playDrainPump();
+      if (isStop) {
+        comm.stopMusic(erd);
+        return;
+      } else {
+        if (tag == kRight) {
+          Future.delayed(const Duration(milliseconds: 20))
+              .then((value) => comm.playMusic(erd));
+        } else {
+          comm.playMusic(erd);
+        }
+
+        // if ('All I Want For Christmas is You' == model.project.value.name) {
+        //   Future.delayed(const Duration(milliseconds: 500)).then((value) {
+        //     comm.playDrainPump();
+        //   });
+        // }
       }
     }
     // return;
@@ -104,7 +121,7 @@ class ModelController extends GetxController {
   }
 
   void play() {
-    stop();
+    // stop();
     final trackContainerController = Get.find<ApplianceTracksController>();
     trackContainerController.scrollControllers.jumpTo(0);
     trackContainerController.play();
@@ -115,9 +132,26 @@ class ModelController extends GetxController {
   }
 
   void stop() {
+    final trackContainerController = Get.find<ApplianceTracksController>();
+    trackContainerController.scrollControllers.resetScroll();
+
     for (var timer in playTimers) {
       timer.cancel();
     }
     playTimers.clear();
+
+    final left = Get.find<CommunicationController>(tag: kLeft);
+    final right = Get.find<CommunicationController>(tag: kRight);
+
+    for (var appliance in project.value.appliances) {
+      _playAppliance(appliance, isStop: true);
+    }
+
+    Future.delayed(const Duration(milliseconds: 10)).then((value) {
+      left.stopDrainPump();
+      // left.stopLidLock();
+      // right.stopLidLock();
+      right.stopDrainPump();
+    });
   }
 }

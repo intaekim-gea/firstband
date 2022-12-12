@@ -14,12 +14,14 @@ class ApplianceTrackController extends GetxController {
   final instrument = Instrument(kind: KindOfInstrument.none, bits: []).obs;
   final ScrollController scrollController;
 
-  final trackSize = Size(Get.find<ModelController>().trackWidth, 120).obs;
+  final trackSize = Size(Get.find<ModelController>().trackWidth, 80).obs;
 
   ApplianceTrackController({
+    required Appliance aAppliance,
     required Instrument aInstrument,
     required this.scrollController,
   }) {
+    appliance.value = aAppliance;
     instrument.value = aInstrument;
   }
 }
@@ -39,6 +41,7 @@ class ApplianceTrack extends GetView<ApplianceTrackController> {
   }) : _tag = '${instrument.kind.value}$index' {
     Get.put(
         ApplianceTrackController(
+          aAppliance: appliance,
           aInstrument: instrument,
           scrollController: scrollController,
         ),
@@ -47,36 +50,45 @@ class ApplianceTrack extends GetView<ApplianceTrackController> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      controller: controller.scrollController,
-      scrollDirection: Axis.horizontal,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(Random().nextInt(0xFFFFFF) + 0xFF000000),
-              Color(Random().nextInt(0xFFFFFF) + 0xFF000000),
-            ],
-          ),
-        ),
-        child: SizedBox(
-          width: controller.trackSize.value.width,
-          height: controller.trackSize.value.height,
-          child: GestureDetector(
-            onTapUp: (details) {
-              print(details.localPosition);
-            },
-            child: CustomPaint(
-              painter: TrackPainter(
-                controller.appliance.value,
-                controller.instrument.value,
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: _rulers(),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: ColoredBox(
+        color: const Color.fromARGB(0xFF, 0x19, 0x19, 0x19),
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: () {},
+              iconSize: 80,
+              icon: controller.appliance.value.name.contains('Washer1')
+                  ? Image.asset('assets/layer-6-copy@3x.png')
+                  : Image.asset('assets/layer-5-copy@3x.png'),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                controller: controller.scrollController,
+                scrollDirection: Axis.horizontal,
+                child: SizedBox(
+                  width: controller.trackSize.value.width,
+                  height: controller.trackSize.value.height,
+                  child: GestureDetector(
+                    onTapUp: (details) {
+                      print(details.localPosition);
+                    },
+                    child: CustomPaint(
+                      painter: TrackPainter(
+                        controller.appliance.value,
+                        controller.instrument.value,
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: _rulers(),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
+          ],
         ),
       ),
     );

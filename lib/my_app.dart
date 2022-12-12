@@ -1,3 +1,4 @@
+import 'package:firstband/ui/list/list_page.dart';
 import 'package:firstband/ui/music_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,14 +22,23 @@ class MyApp extends GetMaterialApp {
         theme: ThemeData(
           primarySwatch: Colors.indigo,
         ),
-        initialRoute: MainPage.name,
+        initialRoute: ListPage.name,
         getPages: [
+          GetPage(
+            name: ListPage.name,
+            page: () => const ListPage(),
+            binding: BindingsBuilder(
+              () {
+                Get.put(ListPageController());
+              },
+            ),
+          ),
           GetPage(
             name: MainPage.name,
             page: () => MainPage(),
             binding: BindingsBuilder(
               () {
-                Get.put(MainPageController());
+                Get.put(MainPageController(Get.arguments ?? ''));
               },
             ),
           ),

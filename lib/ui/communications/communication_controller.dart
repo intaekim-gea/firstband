@@ -152,6 +152,17 @@ class CommunicationController extends GetxController {
     _peripheral?.sendPacket(packet.uint8List);
   }
 
+  void stopMusic(String erd) {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString('${(id++).hex1byteString}${erd}0100'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
   static int id = 0;
   void playNote(int midi) {
     if (midi < 0) {
@@ -175,7 +186,7 @@ class CommunicationController extends GetxController {
       source: BeanConfiguration.applictionAddress,
       command: GeaRequest.writeErdRev2,
       data: Uint8StringList.fromString(
-          '${(id++).hex1byteString}f402 04 1200 1200'),
+          '${(id++).hex1byteString}f402 04 04b0 04b0'),
     );
 
     _peripheral?.sendPacket(packet.uint8List);
@@ -188,6 +199,30 @@ class CommunicationController extends GetxController {
       command: GeaRequest.writeErdRev2,
       data: Uint8StringList.fromString(
           '${(id++).hex1byteString} f402 04 0000 0000'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
+  void playLidLock() {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString(
+          '${(id++).hex1byteString}f401 04 04b0 04b0'),
+    );
+
+    _peripheral?.sendPacket(packet.uint8List);
+  }
+
+  void stopLidLock() {
+    final packet = RawPacket(
+      destination: 'c0',
+      source: BeanConfiguration.applictionAddress,
+      command: GeaRequest.writeErdRev2,
+      data: Uint8StringList.fromString(
+          '${(id++).hex1byteString} f401 04 0000 0000'),
     );
 
     _peripheral?.sendPacket(packet.uint8List);

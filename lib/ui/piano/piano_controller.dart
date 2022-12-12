@@ -56,6 +56,6 @@ class PianoController extends GetxController {
       beanController.playNote(newMidi);
     }
 
-    _flutterMidi.playMidiNote(midi: midi);
+    if (midi != 45) _flutterMidi.playMidiNote(midi: midi);
   }
 }
