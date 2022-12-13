@@ -13,8 +13,8 @@ Future<void> locate() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await locate();
-  await SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight],
-  );
+  // await SystemChrome.setPreferredOrientations(
+  //   [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight],
+  // );
   runApp(const MyApp());
 }
